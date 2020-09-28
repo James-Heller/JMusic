@@ -12,6 +12,6 @@
 </head>
 
 <body>
-<a href="/UserListServlet">查看用户列表</a>
+<a href="UserListServlet">查看用户列表</a>
 </body>
 </html>

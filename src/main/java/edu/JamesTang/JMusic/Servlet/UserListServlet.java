@@ -24,6 +24,6 @@ public class UserListServlet extends HttpServlet {
         UserDao ud=new UserDaoImplements();
         List<MyUser> list=ud.getUserList();
         req.setAttribute("all",list);
-        req.getRequestDispatcher("userList.jsp").forward(req,resp);
+        req.getRequestDispatcher("showUserList.jsp").forward(req,resp);
     }
 }

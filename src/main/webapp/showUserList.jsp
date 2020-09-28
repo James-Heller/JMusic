@@ -30,7 +30,7 @@
             <td><input type="text" value="${U.name}" name="name" ></td>
             <td><input type="text" value="${U.passwordMD5}" name="password"></td>
             <td><input type="text" value="${U.ID}" name="id"></td>
-            <td><a href="deleteServlet?id=${U.ID}">删除</a> <input type="submit" value="更新"/></td>
+            <td><a href="DeleteServlet?id=${U.ID}">删除</a> <input type="submit" value="更新"/></td>
         </tr>
     </form>
 </c:forEach>

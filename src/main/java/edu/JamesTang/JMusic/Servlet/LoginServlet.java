@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class LoginServlet extends HttpServlet {
 
@@ -24,8 +25,10 @@ public class LoginServlet extends HttpServlet {
         UserDao ud=new UserDaoImplements();
 
         if(ud.login(name,pwMD5)){
-            req.getRequestDispatcher("/index.jsp");
+            req.getRequestDispatcher("/index.jsp").forward(req,resp);
         }else {
+            PrintWriter out=resp.getWriter();
+            out.print("<script>alert('登录失败!');window.location.href='register.jsp'</script>");
             req.getRequestDispatcher("/login.jsp");
         }
     }

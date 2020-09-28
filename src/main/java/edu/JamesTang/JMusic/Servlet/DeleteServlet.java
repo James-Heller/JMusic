@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class DeleteServlet extends HttpServlet {
 
@@ -22,9 +23,11 @@ public class DeleteServlet extends HttpServlet {
 
         UserDao ud=new UserDaoImplements();
         if(ud.delete(id)){
-            req.getRequestDispatcher("operateSuccess.jsp").forward(req,resp);
+            req.getRequestDispatcher("/showUserList.jsp").forward(req,resp);
         }else {
-            req.getRequestDispatcher("operateFail").forward(req,resp);
+            PrintWriter out=resp.getWriter();
+            out.print("<script>alert('操作失败!');window.location.href='register.jsp'</script>");
+            req.getRequestDispatcher("showUserList.jsp").forward(req,resp);
         }
     }
 }
