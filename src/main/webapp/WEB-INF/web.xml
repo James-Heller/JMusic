@@ -3,5 +3,66 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name></display-name>
+
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>edu.JamesTang.JMusic.filter.EncodingFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>edu.JamesTang.JMusic.Servlet.RegisterServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>edu.JamesTang.JMusic.Servlet.LoginServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>UserListServlet</servlet-name>
+    <servlet-class>edu.JamesTang.JMusic.Servlet.UserListServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>UpdateServlet</servlet-name>
+    <servlet-class>edu.JamesTang.JMusic.Servlet.UpdateServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>edu.JamesTang.JMusic.Servlet.DeleteServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>UserListServlet</servlet-name>
+    <url-pattern>/UserListServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>UpdateServlet</servlet-name>
+    <url-pattern>/UpdateServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/DeleteServlet</url-pattern>
+  </servlet-mapping>
+
 </web-app>
