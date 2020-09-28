@@ -13,10 +13,10 @@
 <body>
 
 <form action="LoginServlet" method="post">
-    昵称：<input type="text" name="name" placeholder="nickName">
-    邮箱：<input type="email" name="id" placeholder="example@example.com">
-    密码:<input type="password" name="password" >
-
+    昵称：<input type="text" name="name" placeholder="nickName"><br><br>
+    邮箱：<input type="email" name="id" placeholder="example@example.com"><br><br>
+    密码:<input type="password" name="password" ><br><br>
+    <input type="submit"value="登录"name="login"><input type="reset"value="重置"><br>
 </form>
 </body>
 </html>

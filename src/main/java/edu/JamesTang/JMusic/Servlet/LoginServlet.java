@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
         UserDao ud=new UserDaoImplements();
 
         if(ud.login(name,pwMD5)){
-            req.getRequestDispatcher("/success.jsp");
+            req.getRequestDispatcher("/index.jsp");
         }else {
             req.getRequestDispatcher("/login.jsp");
         }

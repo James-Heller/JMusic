@@ -28,8 +28,8 @@ public class RegisterServlet extends HttpServlet {
 
         UserDao ud=new UserDaoImplements();
         if(ud.register(user)){
-            req.setAttribute("name",name);
             req.getRequestDispatcher("/login.jsp").forward(req,resp);
+            req.setAttribute("name",name);
         }else {
             PrintWriter out=resp.getWriter();
             out.print("<script>alert('注册失败!');window.location.href='register.jsp'</script>");

@@ -3,7 +3,7 @@ package edu.JamesTang.JMusic.util;
 import java.sql.*;
 
 public class DBConnect {
-    static String url="jdbc:mysql://localhost:3306/JMusic?useSSL=false";
+    static String url="jdbc:mysql://localhost:3306/JMusic?useSSL=false&serverTimezone=UTC";
     static String user="root";
     static String pw="admin";
     static Connection conn=null;
@@ -21,6 +21,7 @@ public class DBConnect {
     }
 
     public static int addUpdateDelete(String sql){
+
         int i=0;
         try{
             ps=conn.prepareStatement(sql);
