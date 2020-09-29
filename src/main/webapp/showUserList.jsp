@@ -25,12 +25,12 @@
 %>
 
 <c:forEach var="U" items="${requestScope.all}">
-    <form action="UserListServlet" method="post">
+    <form action="UserListServlet" method="post" >
         <tr>
-            <td><input type="text" value="${U.name}" name="name" ></td>
-            <td><input type="text" value="${U.passwordMD5}" name="password"></td>
-            <td><input type="text" value="${U.ID}" name="id"></td>
-            <td><a href="DeleteServlet?id=${U.ID}">删除</a> <input type="submit" value="更新"/></td>
+            昵称：<td><input type="text" value="${U.name}" name="name" class="layui-input"/></td>
+            邮箱：<td><input type="text" value="${U.ID}" name="id" class="layui-input"/></td>
+            密码：<td><input type="hidden" value="${U.passwordMD5}" name="password" class="layui-input"/></td>
+            <td><a href="DeleteServlet?id=${U.ID}">删除</a> <input type="submit" value="更新" class="layui-btn layui-btn-warm"/></td>
         </tr>
     </form>
 </c:forEach>
