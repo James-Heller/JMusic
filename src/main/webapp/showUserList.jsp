@@ -17,21 +17,47 @@
 <html>
 <head>
     <title>用户清单</title>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
 </head>
-<body>
+<body class="layui-main layui-bg-black">
 <%
     String path=request.getContextPath();
     String basepath=request.getScheme()+"://"+ request.getServerName()+":"+request.getServerPort()+"/";
 %>
 
 <c:forEach var="U" items="${requestScope.all}">
-    <form action="UserListServlet" method="post" >
-        <tr>
-            昵称：<td><input type="text" value="${U.name}" name="name" class="layui-input"/></td>
-            邮箱：<td><input type="text" value="${U.ID}" name="id" class="layui-input"/></td>
-            密码：<td><input type="hidden" value="${U.passwordMD5}" name="password" class="layui-input"/></td>
-            <td><a href="DeleteServlet?id=${U.ID}">删除</a> <input type="submit" value="更新" class="layui-btn layui-btn-warm"/></td>
-        </tr>
+    <form action="UserListServlet" method="post" class="layui-form">
+
+        <div class="layui-container">
+
+            <div class="layui-row">
+                <div class="layui-col-md9">
+                    <div class="layui-form-label">
+                        <label class="layui-form-label">昵称：</label>
+                    </div>
+                    <div class="layui-input-block">
+                        <input type="text" value="${U.name}" name="name" class="layui-input"/>
+                    </div>
+
+                    <div class="layui-form-label">
+                        <label class="layui-form-label">邮箱：</label>
+                    </div>
+                    <div class="layui-input-block">
+                        <input type="email" value="${U.ID}" name="id" class="layui-input"/>
+                    </div>
+
+                    <div class="layui-form-label">
+                        <label class="layui-form-label">密码：</label>
+                    </div>
+                    <div class="layui-input-block">
+                        <input type="password" value="${U.passwordMD5}" name="password" readonly="readonly" class="layui-input"/>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+
     </form>
 </c:forEach>
 </body>

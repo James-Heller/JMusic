@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="layui-row">
-            <div class="layui-col-md3 layui-col-md-offset3">
+            <div class="layui-col-md3">
                 <input type="submit" value="登录" name="login" class="layui-btn layui-btn-warm"/>
                 <input type="reset" value="重置" name="reset" class="layui-btn layui-btn-normal"/>
             </div>
