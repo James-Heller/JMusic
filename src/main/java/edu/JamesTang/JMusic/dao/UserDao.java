@@ -8,8 +8,8 @@ public interface UserDao {
 
     boolean login(String name,String passwordMD5);
     boolean register(MyUser user);
-    public List<MyUser> getUserList();
-    public boolean delete(String id);
-    public boolean update(String name,String id);
+    List<MyUser> getUserList();
+    boolean delete(String id);
+    boolean update(String name, String id);
 
 }
