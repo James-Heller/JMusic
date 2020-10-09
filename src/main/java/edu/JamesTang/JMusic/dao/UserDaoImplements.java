@@ -10,12 +10,18 @@ import java.util.List;
 
 public class UserDaoImplements implements UserDao{
 
-
+    /**
+     *
+     * @param name username
+     * @param passwordMD5 The MD5 of password
+     * @return Return true if input equal to the data from database
+     */
     @Override
     public boolean login(String name, String passwordMD5) {
         String sql="SELECT * FROM user WHERE name='"+name+"' AND passwordMD5='"+passwordMD5+"'; ";
         boolean flag=false;
         DBConnect.init();
+
         ResultSet rs=DBConnect.selectSql(sql);
         try {
             while(rs.next()){
@@ -31,6 +37,12 @@ public class UserDaoImplements implements UserDao{
         return flag;
     }
 
+    /**
+     *
+     * @param user Object of User class
+     * @return Return true if register successful
+     */
+
     @Override
     public boolean register(MyUser user) {
         boolean flag=false;
@@ -45,6 +57,11 @@ public class UserDaoImplements implements UserDao{
         DBConnect.closeConn();
         return flag;
     }
+
+    /**
+     *
+     * @return Return a List type of User
+     */
 
     @Override
     public List<MyUser> getUserList() {
@@ -68,6 +85,12 @@ public class UserDaoImplements implements UserDao{
         return list;
     }
 
+    /**
+     *
+     * @param id The unique info of a user in ver1.0 is E-Mail
+     * @return True if delete successful
+     */
+
     @Override
     public boolean delete(String id) {
         boolean flag=false;
@@ -80,6 +103,13 @@ public class UserDaoImplements implements UserDao{
         DBConnect.closeConn();
         return flag;
     }
+
+    /**
+     *
+     * @param name The name of the user
+     * @param id The unique info use to locate user
+     * @return True if successful
+     */
 
     @Override
     public boolean update(String name, String id) {
